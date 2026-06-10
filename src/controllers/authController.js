@@ -96,7 +96,6 @@ export const forgotPassword = async (req, res) => {
     user.resetPasswordOTP = hashedOTP;
     user.resetPasswordExpire = Date.now() + 15 * 60 * 1000;
     await user.save();
-    // const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${otp}`;
     const message = `رمز اعادة تعيين كلمة المرور : ${otp} 
     صالح ل 15 دقيقة فقط.`;
     await sendEmail(user.email, "إعادة تعيين كلمة المرور", message);
