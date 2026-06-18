@@ -8,6 +8,8 @@ import treatmentRoutes from './routes/treatmentRoutes.js';
 import invoiceRoutes from './routes/invoiceRoutes.js';
 import inventoryRoutes from './routes/inventoryRoutes.js';
 import notificationRoutes from './routes/notificationRoutes.js';
+import swaggerSpec from './config/swagger.js';
+import swaggerUi from 'swagger-ui-express';
 
 const app = express();
 app.use(cors());
@@ -27,5 +29,6 @@ app.use("/api/treatments", treatmentRoutes);
 app.use("/api/invoices", invoiceRoutes);
 app.use("/api/inventory", inventoryRoutes);
 app.use("/api/notifications", notificationRoutes);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 export default app;
