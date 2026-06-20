@@ -10,7 +10,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:5000",
+        url: "https://dental-clinic-management-system-silk.vercel.app",
       },
     ],
     components: {
